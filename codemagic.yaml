@@ -26,15 +26,22 @@
           cd ios && pod install --repo-update
       - name: Build unsigned iOS IPA
         script: |
-          # Flutter throws an error at the very end because of missing team, but Xcode succeeds.
-          # We use || true to ignore Flutter's exit code so Codemagic doesn't stop.
           flutter build ios --release --no-codesign || true
           
-          # Manually package the compiled Runner.app into an unsigned .ipa file
-          mkdir -p build/ios/Payload
-          cp -r build/ios/iphoneos/Runner.app build/ios/Payload/
-          cd build/ios
-          zip -r unsigned_app.ipa Payload
+          # Find the compiled Runner.app (usually in Release-iphoneos or similar)
+          APP_PATH=ind . -name "Runner.app" -type d | head -n 1
+          echo "Found app at: "
+          
+          if [ -n "" ]; then
+            mkdir -p build/ios/Payload
+            cp -r "" build/ios/Payload/
+            cd build/ios
+            zip -q -r unsigned_app.ipa Payload
+            echo "IPA created successfully."
+          else
+            echo "Error: Runner.app not found. Compilation must have actually failed."
+            exit 1
+          fi
     artifacts:
       - build/ios/unsigned_app.ipa
 
@@ -100,4 +107,5 @@
       google_play:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: internal
+
 
