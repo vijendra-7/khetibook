@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/widget_bg"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/widget_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KhetiBook"
+        android:textColor="#2E7D32"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Single Crop Container (Centered & Large) -->
+    <LinearLayout
+        android:id="@+id/single_crop_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:visibility="gone">
+        
+        <TextView
+            android:id="@+id/single_crop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Name"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+            
+        <TextView
+            android:id="@+id/single_crop_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹000 - 000"
+            android:textColor="#2E7D32"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!-- List Container (Standard) -->
+    <LinearLayout
+        android:id="@+id/list_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Row 1 -->
+        <LinearLayout android:id="@+id/row_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+            <TextView android:id="@+id/crop1_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#000000" android:textStyle="bold" android:textSize="14sp"/>
+            <TextView android:id="@+id/crop1_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#2E7D32" android:textStyle="bold" android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/div_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C8E6C9"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"
+            android:orientation="horizontal" />
+
+        <!-- Row 2 -->
+        <LinearLayout android:id="@+id/row_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+            <TextView android:id="@+id/crop2_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#000000" android:textStyle="bold" android:textSize="14sp"/>
+            <TextView android:id="@+id/crop2_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#2E7D32" android:textStyle="bold" android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/div_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C8E6C9"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"
+            android:orientation="horizontal" />
+
+        <!-- Row 3 -->
+        <LinearLayout android:id="@+id/row_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+            <TextView android:id="@+id/crop3_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#000000" android:textStyle="bold" android:textSize="14sp"/>
+            <TextView android:id="@+id/crop3_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#2E7D32" android:textStyle="bold" android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/div_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C8E6C9"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"
+            android:orientation="horizontal" />
+
+        <!-- Row 4 -->
+        <LinearLayout android:id="@+id/row_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+            <TextView android:id="@+id/crop4_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#000000" android:textStyle="bold" android:textSize="14sp"/>
+            <TextView android:id="@+id/crop4_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#2E7D32" android:textStyle="bold" android:textSize="14sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No crops pinned"
+        android:gravity="center"
+        android:textColor="#757575"
+        android:visibility="gone"/>
+
+</LinearLayout>

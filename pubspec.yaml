@@ -1,0 +1,119 @@
+name: farmer_accounting
+description: "Manage farm expenses, track harvests, stay updated with daily APMC crop prices and keep helper accounts locally."
+publish_to: 'none'
+version: 1.2.11+39
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Database
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+
+  # State management
+  provider: ^6.1.2
+
+  # Firebase & Auth
+  firebase_core: ^3.11.0
+  firebase_auth: ^5.5.0
+  firebase_crashlytics: ^4.3.1
+  firebase_performance: ^0.10.1+10
+  google_sign_in: ^6.2.2
+  sign_in_with_apple: ^6.1.4
+
+  # PDF generation
+  pdf: ^3.11.1
+  printing: ^5.13.2
+  pdfx: ^2.5.0
+
+  # Storage
+  shared_preferences: ^2.3.2
+  path_provider: ^2.1.4
+
+  # Date formatting
+  intl: ^0.20.2
+
+  # Icons
+  cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.7.0
+
+  # App version info
+  package_info_plus: ^8.1.3
+
+  # Sharing
+  share_plus: ^10.1.2
+
+  # File saving
+  permission_handler: ^11.3.1
+
+  # UI / Export
+  google_fonts: ^6.2.1
+  http: ^1.6.0
+  html: ^0.15.6
+  xml: ^6.5.0
+  shimmer: ^3.0.0
+  fl_chart: ^0.71.0
+  uuid: ^4.5.3
+  cloud_firestore: ^5.6.12
+  image_picker: ^1.1.2
+  speech_to_text: ^7.0.0
+  connectivity_plus: ^6.1.3
+  url_launcher: ^6.3.1
+  file_picker: ^8.1.7
+  webview_flutter: ^4.10.0
+  screenshot: ^3.0.0
+  flutter_svg: ^2.0.10
+  cached_network_image: ^3.4.1
+  in_app_update: ^4.0.2
+  flutter_native_splash: ^2.4.3
+  home_widget: ^0.9.0
+  youtube_player_iframe: ^6.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "../images/new_logo_zoomed.webp"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/panchang.json
+    - assets/images/
+    - assets/icons/
+
+flutter_native_splash:
+  # Background matches your app's green theme
+  color: "#F0F9F0"
+  color_dark: "#0A150A"
+
+  # Your logo (white circle container will show on the green bg)
+  image: assets/images/logo_padded.webp
+  image_dark: assets/images/logo_padded.webp
+
+  # Logo size (fraction of screen width)
+  android_12:
+    image: assets/images/logo_padded.webp
+    image_dark: assets/images/logo_padded.webp
+    color: "#F0F9F0"
+    color_dark: "#0A150A"
+    icon_background_color: "#FFFFFF"
+    icon_background_color_dark: "#FFFFFF"
+
+  # Keep splash on screen until Flutter is ready
+  fullscreen: false
+  android: true
+  ios: false

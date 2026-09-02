@@ -1,0 +1,64 @@
+﻿# ─── Flutter / Dart ───────────────────────────────────────────────────────────
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# ─── Android ──────────────────────────────────────────────────────────────────
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# Signing secrets — NEVER commit these
+android/upload-keystore.jks
+android/key.properties
+
+# ─── iOS ──────────────────────────────────────────────────────────────────────
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/DerivedData/
+**/ios/**/xcuserdata
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ─── macOS ────────────────────────────────────────────────────────────────────
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+
+# ─── IDE / Editor ─────────────────────────────────────────────────────────────
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+*.swp
+.history/
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+*.class
+*.log
+*.pyc
+.atom/
+.svn/
+.swiftpm/
+migrate_working_dir/
+app.*.symbols
+app.*.map.json
+
+# ─── Codemagic ────────────────────────────────────────────────────────────────
+# codemagic.yaml is intentionally NOT ignored — Codemagic needs it

@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "279293111131",
+    "project_id": "khetibook-ad7db",
+    "storage_bucket": "khetibook-ad7db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279293111131:android:8358909fdbf996e19fc87e",
+        "android_client_info": {
+          "package_name": "com.farmer.farmer_accounting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279293111131-2704fge4t12dm1nqkeios3qllh87ki48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farmer.farmer_accounting",
+            "certificate_hash": "ede217bafccde756015bf80d5c68dfb73d2e88a5"
+          }
+        },
+        {
+          "client_id": "279293111131-5cjf094umvrf9l3hlond52q58tu115fn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farmer.farmer_accounting",
+            "certificate_hash": "a3f6fe46052fcf81c595ff31b1b9133838e18055"
+          }
+        },
+        {
+          "client_id": "279293111131-p3u52i82spfi0jpkpj4gm2rs9ffpg3j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farmer.farmer_accounting",
+            "certificate_hash": "1fd5ff724fd24e6bb9c33eab7c05ce2f5bef39d2"
+          }
+        },
+        {
+          "client_id": "279293111131-i3q6tnd7jvbvpq0gvjjbvvav7eoq1b7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPgHyUj85bJCD9GB-fzlQwT0xc0pqh_ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279293111131-i3q6tnd7jvbvpq0gvjjbvvav7eoq1b7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

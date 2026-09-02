@@ -1,0 +1,89 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && (request.auth.token.email == 'thevijendrachaudhary@gmail.com');
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Check if the user is NOT blocked in their profile
+    function isNotBlocked() {
+      return !get(/databases/$(database)/documents/users_profiles/$(request.auth.uid)).data.isBlocked;
+    }
+
+    // User-specific data (Investments, Outputs, etc.)
+    match /users/{userId}/{document=**} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId) && isNotBlocked();
+    }
+    
+    // User Profiles (Name, Email, Activity)
+    match /users_profiles/{userId} {
+      allow read: if isOwner(userId) || isAdmin(); 
+      allow write: if isOwner(userId) || isAdmin();
+    }
+
+    // Global Metadata (Investment Types, Crops, etc.)
+    match /global_metadata/{document=**} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Announcements
+    match /announcements/{document=**} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Announcement Responses (Hybrid Polls & Feedback)
+    match /announcement_responses/{responseId} {
+      // Admins can see all responses; users cannot see each other's responses.
+      allow read: if isAdmin();
+      // Users can only submit their own response, and only if not blocked.
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid && isNotBlocked();
+      // Admins can delete spam or old responses.
+      allow delete: if isAdmin();
+      // Updates are not allowed for responses to preserve data integrity.
+      allow update: if false;
+    }
+
+    // System Controls (Maintenance, Force Update)
+    match /system_controls/{document=**} {
+      allow read: if true; // Public for maintenance check during launch
+      allow write: if isAdmin();
+    }
+
+    // Price Overrides
+    match /price_overrides/{document=**} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // FAQs & Tutorials
+    match /faqs/{document=**} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Market Banners (Image per market, shown above prices)
+    match /market_banners/{document=**} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
